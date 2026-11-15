@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FCF9FF" />
+  <meta name="description" content="K-POP Universe — A little universe of my favorite stars, music and memories." />
+  <title>K-POP Universe ✦ My Little Star Archive</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="./data.js" defer></script>
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <div class="starfield" aria-hidden="true"><i>✦</i><i>✧</i><i>✳</i><i>✦</i><i>✧</i><i>✳</i></div>
+  <header class="site-header">
+    <div class="nav-shell wrap">
+      <a class="brand" href="#home" aria-label="K-POP Universe 回到首頁"><span class="brand-mark">✳</span> K-POP <em>UNIVERSE</em></a>
+      <nav class="nav-links" aria-label="主要導覽">
+        <a href="#home">Home</a><a href="#artists">Artists</a><a href="#music">Music</a><a href="#memories">Memories</a><a href="#wishlist">Wishlist</a>
+      </nav>
+      <a class="nav-cta" href="#wishlist">My wishlist <span>↗</span></a>
+    </div>
+  </header>
+  <main>
+    <section id="home" class="hero wrap section">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="live-dot"></span> WELCOME TO MY LITTLE UNIVERSE</span>
+        <h1>Every star has<br/>a <em>special place</em><br/>in my heart<span class="sparkle">✳</span></h1>
+        <p>把喜歡的偶像、反覆播放的歌曲，還有那些閃閃發亮的回憶，全部收藏在這個只屬於我的小宇宙裡。</p>
+        <div class="hero-actions"><a class="button primary" href="#artists">Explore my universe <span>↗</span></a><a class="button ghost" href="#memories">See my memories <span>♡</span></a></div>
+        <div class="hero-stats"><div><strong id="artist-count">03</strong><span>FAVORITE ARTISTS</span></div><div><strong id="song-count">06</strong><span>SONGS ON REPEAT</span></div><div><strong>∞</strong><span>LITTLE MOMENTS</span></div></div>
+      </div>
+      <div class="hero-art hero-photo-wall" aria-label="NMIXX、ITZY、TWICE 追星照片拼貼">
+        <span class="photo-aura" aria-hidden="true"></span>
+        <figure class="hero-photo hero-photo-main">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/68/NMIXX_220206_03.png" alt="NMIXX 團體照片" fetchpriority="high" />
+          <figcaption><span class="photo-label">01 / MY NORTH STAR</span><strong>NMIXX</strong></figcaption>
+        </figure>
+        <figure class="hero-photo hero-photo-itzy">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Itzy_241023.jpg" alt="ITZY 團體照片" />
+          <figcaption>ITZY ✦</figcaption>
+        </figure>
+        <figure class="hero-photo hero-photo-twice">
+          <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Twice_in_Seattle.jpg/960px-Twice_in_Seattle.jpg" alt="TWICE 團體照片" />
+          <figcaption>TWICE ♡</figcaption>
+        </figure>
+        <span class="photo-sticker sticker-one" aria-hidden="true">my little<br/>universe ♡</span>
+        <span class="photo-sticker sticker-two" aria-hidden="true">✳</span>
+      </div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div>LOVE • MUSIC • MEMORIES • LITTLE STARS • LOVE • MUSIC • MEMORIES • LITTLE STARS •</div></div>
+    <section id="artists" class="section wrap">
+      <div class="section-heading"><div><span class="kicker">01 / THE CONSTELLATION</span><h2>My <em>Artists</em> <span class="tiny-star">✳</span></h2><p>每一顆星星，都有讓我心動的理由。</p></div><span class="heading-aside">THE ONES WHO MAKE ME SHINE ✧</span></div>
+      <div id="artist-grid" class="artist-grid"></div>
+    </section>
+    <section id="music" class="section music-section">
+      <div class="wrap"><div class="section-heading"><div><span class="kicker">02 / ON REPEAT</span><h2>Music <em>Archive</em> <span class="tiny-star">♫</span></h2><p>每一首歌，都是屬於某個時刻的背景音樂。</p></div><span class="heading-aside">PRESS PLAY ON YOUR FEELINGS</span></div>
+      <div class="music-toolbar"><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="music-search" type="search" placeholder="搜尋歌曲名稱或心情..." aria-label="搜尋歌曲" /></label><label class="filter-wrap">Artist <select id="artist-filter" aria-label="依藝人篩選歌曲"><option value="all">All artists</option></select></label></div>
+      <div class="music-quick-filter" role="group" aria-label="歌曲收藏篩選"><button class="music-filter-btn active" id="show-all-songs" type="button" aria-pressed="true">全部歌曲 <span>✦</span></button><button class="music-filter-btn" id="show-favorite-songs" type="button" aria-pressed="false">♡ 我的最愛 <span id="favorite-count">0</span></button></div>
+      <div id="music-list" class="music-list" aria-live="polite"></div>
+      </div>
+    </section>
+    <section id="memories" class="section wrap">
+      <div class="section-heading"><div><span class="kicker">03 / DEAR DIARY</span><h2>My <em>Memories</em> <span class="tiny-star">♡</span></h2><p>想把每一個發光的日子，好好留在心裡。</p></div><span class="heading-aside">MEMORIES TO TREASURE FOREVER</span></div>
+      <div class="memory-intro"><span class="memory-diary-title">Snapshots from my universe <span>♡</span></span><span class="memory-diary-sub">AN ARCHIVE OF STAGES & SONGS I LOVE</span></div>
+      <div id="memory-list" class="memory-gallery" aria-label="追星影像收藏"></div>
+    </section>
+    <section id="wishlist" class="section wishlist-section">
+      <div class="wrap wishlist-wrap"><div><span class="kicker">04 / WISH UPON A STAR</span><h2>My <em>Wishlist</em> <span class="tiny-star">✧</span></h2><p>下一次想完成的追星小願望，都在這裡慢慢發光。</p><div class="wishlist-deco" aria-hidden="true">✧ <span>♡</span> ✳</div><p class="privacy-note">願望僅儲存在此瀏覽器，不會同步到其他裝置。</p></div><div class="wishlist-card"><h3>Dear universe, I wish for... <span>✦</span></h3><form id="wish-form"><label for="wish-input" class="sr-only">新的追星願望</label><input id="wish-input" maxlength="80" placeholder="例如：收藏一張喜歡的專輯..." required /><button class="button primary" type="submit">Add wish ＋</button></form><div class="wish-progress"><span id="wish-summary">0 wishes</span><span id="wish-completed">0 completed</span></div><ul id="wish-list" class="wish-list" aria-live="polite"></ul></div></div>
+    </section>
+  </main>
+  <footer class="footer wrap"><a class="brand" href="#home"><span class="brand-mark">✳</span> K-POP <em>UNIVERSE</em></a><p>Made with ♡ and a little stardust. Unofficial personal fan archive.</p><a href="#home">Back to top ↑</a></footer>
+</body>
+</html>
